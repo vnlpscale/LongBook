@@ -1,0 +1,14 @@
+services:
+  longbook:
+    build: .
+    ports:
+      - "127.0.0.1:7860:7860"
+    environment:
+      LONGBOOK_PASSWORD: ${LONGBOOK_PASSWORD:-}
+      LONGBOOK_API_URL: ${LONGBOOK_API_URL:-http://127.0.0.1:8080/v1}
+      LONGBOOK_API_KEY: ${LONGBOOK_API_KEY:-}
+    volumes:
+      - longbook-data:/home/longbook/data
+    restart: "no"
+volumes:
+  longbook-data:

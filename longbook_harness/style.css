@@ -1,0 +1,41 @@
+/* A restrained, chat-first workspace. No CDN assets or JavaScript build step. */
+:root { color-scheme: light dark; }
+.gradio-container { max-width: 1540px !important; margin: 0 auto; padding: 22px 30px 10px !important; }
+#app-header { align-items: center; padding: 0 0 12px; border-bottom: 1px solid #e6e8e7; }
+.brand { display: flex; align-items: center; gap: 11px; color: #173c32; min-height: 42px; }
+.brand > span:first-of-type { font-size: 24px; font-weight: 650; letter-spacing: -.7px; }
+.brand-caption { font-size: 12px; color: #74807b; margin-left: 12px; letter-spacing: .02em; }
+#open-settings { background: transparent; border: 1px solid #d6ddda; color: #34473f; box-shadow: none; }
+#live-status { min-height: 22px; padding: 0 2px; }
+#live-status p { font-size: 12px; color: #738178; }
+#live-status strong { font-weight: 500; }
+#conversation { border: 0 !important; border-radius: 0; background: transparent; }
+.welcome { max-width: 680px; text-align: center; margin: 42px auto; padding: 28px 16px; }
+.welcome-mark { font-size: 46px; color: #416657; font-family: Georgia, serif; margin-bottom: 20px; }
+.welcome h1 { font-size: clamp(25px, 3vw, 36px); font-weight: 500; letter-spacing: -.04em; margin: 0 0 18px; color: #28382f; }
+.welcome p { font-size: 15px; color: #7b8780; line-height: 1.9; }
+.welcome .welcome-note { font-size: 12px; max-width: 430px; margin: 16px auto 0; }
+#new-chat { background: #edf3ef !important; color: #234e3f !important; box-shadow: none; border-color: transparent; min-height: 44px; }
+#conversation-list { border: none; background: transparent; }
+#composer { border-radius: 17px; box-shadow: 0 2px 18px #243e2e08; }
+#composer textarea { min-height: 48px; padding: 16px; font-size: 15px; line-height: 1.6; }
+#evidence-panel { border-color: #e9eeeb; margin-top: 10px; }
+#disclaimer p { color: #88918c; font-size: 11px; text-align: center; }
+#evidence-panel blockquote { overflow-wrap: anywhere; font-size: 13px; }
+button, input, textarea { font-family: inherit; }
+button:focus-visible { outline: 2px solid #2d7960 !important; outline-offset: 2px; }
+@media (max-width: 700px) {
+  .gradio-container { padding: 12px 12px 6px !important; }
+  .brand-caption { display: none; }
+  .brand > span:first-of-type { font-size: 22px; }
+  .welcome { margin: 15px auto; padding: 16px 6px; }
+  .welcome-mark { font-size: 34px; margin-bottom: 12px; }
+  .welcome p { font-size: 13px; }
+  #live-status p { font-size: 11px; }
+}
+.dark .brand, .dark .welcome-mark { color: #b6d8c9; }
+.dark .welcome h1 { color: #e4eee8; }
+.dark #open-settings { color: #c9dbd0; border-color: #4c5c53; }
+.dark #app-header { border-color: #3b4941; }
+.dark #new-chat { background: #2d4337 !important; color: #dfede4 !important; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
