@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "longbook-harness"
+version = "0.1.0"
+description = "A portable, personal chat harness for the LongBook model series"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = "MIT"
+authors = [{name = "Vnlpscale"}]
+dependencies = [
+  "gradio>=6.5.1,<7",
+  "httpx>=0.28,<1",
+  "huggingface-hub>=0.34,<2",
+]
+
+[project.optional-dependencies]
+local = ["torch>=2.6,<3", "transformers>=4.57,<6", "accelerate>=1.2,<2", "safetensors>=0.5"]
+quantized = ["bitsandbytes>=0.45,<1"]
+dev = ["pytest>=8,<10", "ruff>=0.9", "build>=1"]
+
+[project.scripts]
+longbook = "longbook_harness.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["longbook_harness*"]
+
+[tool.setuptools.package-data]
+longbook_harness = ["*.css"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
