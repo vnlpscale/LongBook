@@ -1,0 +1,9 @@
+.git
+.venv
+__pycache__
+.pytest_cache
+*.sqlite3*
+.env
+build
+dist
+*.egg-info
